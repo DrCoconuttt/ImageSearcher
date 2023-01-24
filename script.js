@@ -23,6 +23,8 @@ search.addEventListener("click", async () => {
     })
     .then(function(data) {
         if(data.total > 0){
+            document.getElementById("NoImgTxt").innerHTML = '';
+            document.getElementById("imageBoxDiv").style.paddingTop = "18px";
             let rand = Math.floor(Math.random() * Math.min(10,data.total));
             let image = data.results[rand].urls.regular;
             imageToDisplay.onload = function() {
