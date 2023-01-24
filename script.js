@@ -8,6 +8,13 @@ const imageToDisplay = document.querySelector('.imageToDisplay');
 
 getDefaultImage();
 
+document.getElementById("searchBar").addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.key === "Enter") {
+        document.getElementById("searchBtn").click();
+    }
+});
+
 search.addEventListener("click", async () => {
     let input = document.getElementById("searchBar").value;
     fetch(`https://api.unsplash.com/search/photos?query=${input}&client_id=g-7HdLVjqIZ_upK69aerFhZNXcUp5ac-tFDyJ2GWFgo`)
